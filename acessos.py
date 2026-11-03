@@ -4,6 +4,9 @@ def carregar_eventos(caminho):
 
     with open(caminho, "r", encoding="utf-8") as arquivo:
         dados = json.load(arquivo)
+    elista = isinstance(dados,list)
+    if not elista:
+      raise ValueError("O JSON precisa conter uma lista de eventos")
     return dados
 def ips_com_muitas_falhas(dicionario,limite = 2):
   falhas = {}
@@ -52,6 +55,10 @@ except FileNotFoundError:
 
 except json.JSONDecodeError:
   print("Erro! Arquivo não segue a sintaxe JSON!")
+
+except ValueError as erro:
+  print(f"Erro: {erro}")
+  
 
 else:
   
