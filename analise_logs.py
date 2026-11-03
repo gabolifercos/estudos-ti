@@ -1,6 +1,3 @@
-# exercicio de identificação de ips unicos ou não:
-
-
 eventos_resumo = [
     {"ip": "192.0.2.10", "resultado": "falha"},
     {"ip": "192.0.2.20", "resultado": "sucesso"},
